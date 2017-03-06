@@ -1,0 +1,37 @@
+function getDayType (day) {
+	switch (day) {
+		case 0:
+			return "none";
+		case 3:
+			return "odd";
+		case 4:
+			return "even";
+		case 6:
+			return "none";
+		default:
+			return "seven";
+	}
+}
+
+const buildSchedules = function (periodList, lunchList, lunchSettings) {
+	const compareTimes = function (a, b) {
+		return momentize(a.time).isBefore(momentize(b.time)) ? 1 : -1;
+	}
+	let schedules = {};
+	for (let dayType in periodList) {
+		schedules[dayType] = [];
+		for (let period of (periodList[dayType]
+			.concat(lunchList[dayType][lunchSettings[dayType]]))
+		) {
+			schedules[dayType].push({
+				name: `the start of ${period.name}`,
+				time: period.start
+			}, {
+				name: `the end of ${period.name}`,
+				time: period.end
+			});
+		}
+		schedules[dayType].sort(compareTimes);
+	}
+	return schedules;
+}

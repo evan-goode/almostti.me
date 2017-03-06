@@ -1,0 +1,77 @@
+const DEFAULT_THEME = "salmon";
+const DEFAULT_SEVEN_LUNCH = "first";
+const DEFAULT_ODD_LUNCH = "second";
+const DEFAULT_FONT = "Futura";
+
+$(".icon-settings").addEventListener("click", () => {
+	$(".settings-sidebar-container").classList.add("active");
+});
+
+$(".settings-icon-close").addEventListener("click", () => {
+	$(".settings-sidebar-container").classList.remove("active");
+});
+
+$(".icon-info").addEventListener("click", () => {
+	$(".info-sidebar-container").classList.add("active");
+});
+
+$(".info-icon-close").addEventListener("click", () => {
+	$(".info-sidebar-container").classList.remove("active");
+});
+
+// theme stuff
+const setTheme = function (event, theme) {
+	document.body.className = "";
+	if (event) theme = event.target.value;
+	document.body.classList.add(theme);
+	window.localStorage.setItem("theme", theme);
+}
+$("#theme").addEventListener("change", setTheme);
+
+const themeToLoad = window.localStorage.getItem("theme") || DEFAULT_THEME;
+$("#theme").value = themeToLoad;
+setTheme(undefined, themeToLoad);
+
+// lunch stuff
+let lunchSettings = {
+	seven: DEFAULT_SEVEN_LUNCH,
+	odd: DEFAULT_ODD_LUNCH,
+	even: DEFAULT_SEVEN_LUNCH,
+	none: "none"
+};
+let schedules;
+const setOddLunch = function (event, odd) {
+	if (event) odd = event.target.value;
+	lunchSettings.odd = odd;
+	schedules = buildSchedules(masterPeriodList, masterLunchList, lunchSettings);
+	window.localStorage.setItem("oddLunch", odd);
+	if (typeof update !== "undefined") update();
+}
+const setSevenLunch = function (event, seven) {
+	if (event) seven = event.target.value;
+	lunchSettings.seven = seven;
+	lunchSettings.even = seven;
+	schedules = buildSchedules(masterPeriodList, masterLunchList, lunchSettings);
+	window.localStorage.setItem("sevenLunch", seven);
+	if (typeof update !== "undefined") update();
+}
+const sevenLunchToLoad = window.localStorage.getItem("sevenLunch") || DEFAULT_SEVEN_LUNCH;
+const oddLunchToLoad = window.localStorage.getItem("oddLunch") || DEFAULT_ODD_LUNCH;
+$("#seven").value = sevenLunchToLoad;
+$("#odd").value = oddLunchToLoad;
+setSevenLunch(undefined, sevenLunchToLoad);
+setOddLunch(undefined, oddLunchToLoad);
+$("#seven").addEventListener("change", setSevenLunch);
+$("#odd").addEventListener("change", setOddLunch);
+
+// font stuff
+const setFont = function (event, font) {
+	if (event) font = event.target.value;
+	document.body.style.fontFamily = font;
+	window.localStorage.setItem("font", font);
+}
+$("#font").addEventListener("change", setFont);
+
+const fontToLoad = window.localStorage.getItem("font") || DEFAULT_FONT;
+$("#font").value = fontToLoad;
+setFont(undefined, fontToLoad);

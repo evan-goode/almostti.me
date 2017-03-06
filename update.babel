@@ -1,0 +1,73 @@
+const FORMAT_OPTIONS = {
+	trim: false
+};
+
+let counter = 0;
+
+const update = function () {
+	const now = moment();
+	const milliseconds = now.milliseconds();
+	now.round(1, "seconds");
+	const dayType = getDayType(now.day());
+
+	let next, current, final;
+	for (let index = 0; index < schedules[dayType].length; ++ index) {
+		const time = schedules[dayType][index];
+		if (now.isBefore(momentize(time.time))) {
+			next = time;
+			if (schedules[dayType][index + 1] !== undefined) {
+				current = schedules[dayType][index + 1];
+			} else {
+				current = undefined;
+			}
+		}
+	}
+	const lastPeriod = schedules[dayType][0];
+	if (lastPeriod && now.isBefore(momentize(lastPeriod.time))) {
+		final = lastPeriod;
+	}
+	// this next part's pretty meaty
+	if (next !== undefined) {
+		$(".go-home").classList.remove("active");
+		const timeRemaining = moment.duration(momentize(next.time).diff(now));
+		const remainingString = timeRemaining.format("h:mm:ss", FORMAT_OPTIONS);
+		$(".remaining").textContent = remainingString;
+		$(".remaining-text").textContent = `until ${next.name}`;
+		document.title = remainingString;
+
+		if (final !== undefined) {
+			const totalTimeRemaining = moment.duration(
+				momentize(final.time).diff(now)
+			);
+			const totalTimeRemainingString = totalTimeRemaining.format("h:mm:ss", FORMAT_OPTIONS);
+			$(".final-tile").style.display = "block";
+			$(".final").textContent = totalTimeRemainingString;
+			$(".final-text").textContent = `until the end of the day`;
+		} else {
+			$(".final-tile").style.display = "none";
+		}
+		if (current !== undefined) {
+			const timeElapsed = moment.duration(now.diff(momentize(current.time)));
+			const elapsedString = timeElapsed.format("h:mm:ss", FORMAT_OPTIONS);
+			$(".elapsed-tile").style.display = "block";
+			$(".elapsed").textContent = elapsedString;
+			$(".elapsed-text").textContent = `since ${current.name}`;
+			const percentage = 100 * timeElapsed.asSeconds() /
+				(timeElapsed.asSeconds() + timeRemaining.asSeconds());
+			$(".progress").style.width = `${percentage}%`;
+			document.title += ` - ${Math.floor(percentage)}%`
+		} else {
+			$(".elapsed-tile").style.display = "none";
+			$(".progress").style.width = `0%`;
+		}
+	} else {
+		document.title = $(".go-home").textContent;
+		$(".go-home").classList.add("active");
+	}
+
+	if (counter > 3600) {
+		shiftLetters();
+	}
+	setTimeout(update, 1000 - milliseconds);
+}
+update();

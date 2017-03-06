@@ -1,0 +1,10 @@
+function shiftLetters () {
+	const element = document.querySelector(".title");
+	let title = element.textContent.split("");
+	const index = Math.floor(Math.random() * (title.length - 1));
+	const letter = title[index + 1];
+	title[index + 1] = title[index];
+	title[index] = letter;
+	element.textContent = title.join("");
+}
+// setInterval(shiftLetters, 1000);

@@ -1,0 +1,29 @@
+const momentize = function (array) {
+	return moment({hour: array[0], minute: array[1]});
+}
+
+let querySelectorCache = [];
+const $ = function (query) {
+	if (query in querySelectorCache) {
+		return querySelectorCache[query];
+	}
+	const element = document.querySelector(query);
+	querySelectorCache[query] = element;
+	return element;
+}
+
+const notify = function (string) {
+	const createNotification = function (string) {
+		const notification = new Notification(string);
+	}
+	if (! "Notification" in window) return;
+	if (Notification.permission === "granted") {
+		createNotification(string);
+	} else if (Notification.permission !== "denied") {
+		Notification.requestPermission((permission) => {
+			if (permission === "granted") {
+				createNotification(string);
+			}
+		});
+	}
+}

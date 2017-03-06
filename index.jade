@@ -1,0 +1,102 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		title Almost Time
+		link(rel="stylesheet", href="index.css")
+	body.salmon
+		header
+			h1.title Almost Time
+			section.buttons
+				//- div.material-button.icon-hot
+				//- 	a(href).a-hot
+				//- 		include icon-hot.svg
+				div.material-button.icon-info
+					include icon-info.svg
+				div.material-button.icon-settings
+					include icon-settings.svg
+		main
+			div.container
+				section.tile.remaining-tile.right
+					p.remaining.ginormous.numbers
+					p.remaining-text.small
+				section.tile.elapsed-tile.right
+					p.elapsed.huge.numbers
+					p.elapsed-text.small
+				section.tile.final-tile.right
+					p.final.big.numbers
+					p.final-text.small
+		div.progress
+		section.go-home.overlay
+			p.big Go home.
+		div.sidebar-container.info-sidebar-container
+			div.sidebar-overlay.info-sidebar-overlay
+			section.sidebar.info-sidebar
+				header
+					h2 Info
+					section.buttons
+						div.material-button.info-icon-close
+							include icon-close.svg
+				p Almost Time keeps track of the bell schedule so you don't have to.
+				p This page is #[a(href="https://github.com/evan-goode/almostti.me") open source], so if it sucks, it's your own fault!
+		div.sidebar-container.settings-sidebar-container
+			div.sidebar-overlay.settings-sidebar-overlay
+			section.sidebar.settings-sidebar
+				header
+					h2 Settings
+					section.buttons
+						div.material-button.settings-icon-close
+							include icon-close.svg
+				h3 Aesthetics
+				table
+					tr
+						td Theme:
+						td.right
+							div.select-wrapper
+								select#theme
+									option(value="gold") Gold
+									option(value="salmon") Salmon
+									option(value="cornflower") Cornflower
+									option(value="night") Night
+									option(value="sunset") Sunset
+									option(value="ocean") Ocean
+									option(value="classic") Classic
+					tr
+						td Font:
+						td.right
+							div.select-wrapper
+								select#font
+									option(value="Nunito") Nunito
+									option(value="Product Sans") Product Sans
+									option(value="Lato") Lato
+									option(value="Roboto") Roboto
+				h3 Lunch
+				table
+					tr
+						td M Tu Th F:
+						td.right
+							div.select-wrapper
+								select#seven
+									option(value="first") First
+									option(value="second") Second
+									option(value="third") Third
+					tr
+						td W:
+						td.right
+							div.select-wrapper
+								select#odd
+									option(value="first") First
+									option(value="second") Second
+									option(value="third") Third
+		script(src="bower_components/moment/moment.js")
+		script(src="bower_components/moment-round/dist/moment-round.js")
+		script(src="bower_components/moment-duration-format/lib/moment-duration-format.js")
+		script(src="utilities.js")
+		script(src="times.js")
+		script(src="core.js")
+		script(src="shift-letters.js")
+		script(src="interface.js")
+		script(src="update.js")
+		script(src="hot.js")
+		script(src="analytics.js")
