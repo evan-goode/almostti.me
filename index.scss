@@ -229,6 +229,7 @@ html {
 body {
 	line-height: 1.5;
 	display: flex;
+	visibility: hidden;
 	justify-content: center;
 	flex-direction: column;
 	> * {
@@ -270,6 +271,7 @@ main {
 	line-height: 1;
 	flex: 1;
 	overflow: scroll;
+	overflow-y: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -318,7 +320,7 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: clip-path $animation-duration,
+	transition: clip-path $animation-duration * 2,
 		opacity $animation-duration,
 		color $animation-duration,
 		background $animation-duration;

@@ -358,6 +358,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  visibility: hidden;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -411,6 +412,7 @@ main {
       -ms-flex: 1;
           flex: 1;
   overflow: scroll;
+  overflow-y: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -472,10 +474,10 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: opacity 0.2s, color 0.2s, background 0.2s, -webkit-clip-path 0.2s;
-  transition: opacity 0.2s, color 0.2s, background 0.2s, -webkit-clip-path 0.2s;
-  transition: clip-path 0.2s, opacity 0.2s, color 0.2s, background 0.2s;
-  transition: clip-path 0.2s, opacity 0.2s, color 0.2s, background 0.2s, -webkit-clip-path 0.2s;
+  -webkit-transition: opacity 0.2s, color 0.2s, background 0.2s, -webkit-clip-path 0.4s;
+  transition: opacity 0.2s, color 0.2s, background 0.2s, -webkit-clip-path 0.4s;
+  transition: clip-path 0.4s, opacity 0.2s, color 0.2s, background 0.2s;
+  transition: clip-path 0.4s, opacity 0.2s, color 0.2s, background 0.2s, -webkit-clip-path 0.4s;
   -webkit-clip-path: circle(0% at 50% 50%);
           clip-path: circle(0% at 50% 50%);
   pointer-events: none; }

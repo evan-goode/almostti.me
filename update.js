@@ -9,6 +9,7 @@ var counter = 0;
 var update = function update() {
 	var now = moment();
 	var milliseconds = now.milliseconds();
+	now.hours(9); // for testing
 	now.round(1, "seconds");
 	var dayType = getDayType(now.day());
 
@@ -69,6 +70,7 @@ var update = function update() {
 	if (counter > 3600) {
 		shiftLetters();
 	}
+	document.body.style.visibility = "initial";
 	setTimeout(update, 1000 - milliseconds);
 };
 update();

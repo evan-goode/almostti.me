@@ -20,6 +20,6 @@ function randHot() {
 		hotCounter = 0;
 	}
 }
-randHot();
+// randHot();
 
-document.querySelector(".a-hot").addEventListener("click", randHot);
+// document.querySelector(".a-hot").addEventListener("click", randHot);
