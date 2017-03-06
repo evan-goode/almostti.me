@@ -3,7 +3,7 @@
 var DEFAULT_THEME = "salmon";
 var DEFAULT_SEVEN_LUNCH = "first";
 var DEFAULT_ODD_LUNCH = "second";
-var DEFAULT_FONT = "Futura";
+var DEFAULT_FONT = "Product Sans";
 
 $(".icon-settings").addEventListener("click", function () {
 	$(".settings-sidebar-container").classList.add("active");

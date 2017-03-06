@@ -1,7 +1,7 @@
 const DEFAULT_THEME = "salmon";
 const DEFAULT_SEVEN_LUNCH = "first";
 const DEFAULT_ODD_LUNCH = "second";
-const DEFAULT_FONT = "Futura";
+const DEFAULT_FONT = "Product Sans";
 
 $(".icon-settings").addEventListener("click", () => {
 	$(".settings-sidebar-container").classList.add("active");
