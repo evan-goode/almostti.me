@@ -23,8 +23,8 @@ $themes: (
 			background-color: black
 		),
 		salmon: (
-			primary: salmon,
-			secondary: transparentize(salmon, 0.3),
+			primary: #F95759,
+			secondary: transparentize(#F95759, 0.3),
 			background: white,
 			background-color: white
 		),
@@ -323,6 +323,7 @@ main {
 		color $animation-duration,
 		background $animation-duration;
 	clip-path: circle(0% at 50% 50%);
+	pointer-events: none;
 	@-moz-document url-prefix() {
 		opacity: 0;
 	}
@@ -331,6 +332,7 @@ main {
 			opacity: 1;
 		}
 		clip-path: circle(100% at 50% 50%);
+		pointer-events: initial;
 	}
 }
 .sidebar-container {

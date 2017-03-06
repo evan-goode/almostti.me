@@ -3,8 +3,12 @@ html(lang="en")
 	head
 		meta(charset="utf-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
+		meta(name="apple-mobile-web-app-title" content="Almost Time")
+		meta(name="apple-mobile-web-app-capable" content="yes")
 		title Almost Time
 		link(rel="stylesheet", href="index.css")
+		link(rel="icon", href="favicon.png")
+		link(rel="apple-touch-icon", href="favicon.png")
 		link(rel="manifest", href="manifest.json")
 	body.salmon
 		header
@@ -41,6 +45,7 @@ html(lang="en")
 							include icon-close.svg
 				p Almost Time keeps track of the bell schedule so you don't have to.
 				p This page is #[a(href="https://github.com/evan-goode/almostti.me") open source], so if it sucks, it's your own fault!
+				p You can still access the old version at #[a(href="http://almostti.me/legacy") http://almostti.me/legacy], but it won't be maintained for much longer.
 		div.sidebar-container.settings-sidebar-container
 			div.sidebar-overlay.settings-sidebar-overlay
 			section.sidebar.settings-sidebar
