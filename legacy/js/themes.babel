@@ -1,0 +1,29 @@
+const time = 1024;
+const unset = "sunset";
+
+let timer;
+
+function theme (event, theme) {
+  document.body.className = "";
+  if (event) theme = event.target.textContent.toLowerCase().replace(" ", "-");
+  document.body.classList.add(theme);
+  window.localStorage.setItem("theme", theme);
+}
+[... document.querySelectorAll(".theme")].forEach((element) => {
+  element.addEventListener("click", theme);
+});
+
+function show () {
+  document.querySelector(".themes").classList.remove("hidden");
+}
+function hide () {
+  document.querySelector(".themes").classList.add("hidden");
+}
+
+theme(undefined, window.localStorage.getItem("theme") || unset);
+
+window.addEventListener("blur", hide);
+window.addEventListener("focus", show);
+
+background = new Image();
+background.src = "../star-wars.jpeg";

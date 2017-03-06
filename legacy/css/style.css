@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%; }
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 16px;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+  body.classic {
+    color: black; }
+    body.classic .main {
+      border-color: black; }
+  body.sunset {
+    color: white;
+    background: -webkit-linear-gradient(135deg, rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.5));
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.5)); }
+    body.sunset .main {
+      border-color: white; }
+  body.night {
+    color: lightgray;
+    background: black; }
+    body.night .main {
+      border-color: lightgray; }
+  body.ocean {
+    background: -webkit-linear-gradient(top, #85d8ce, #085078);
+    background: linear-gradient(to bottom, #85d8ce, #085078);
+    color: white; }
+    body.ocean .main {
+      border-color: white; }
+  body.star-wars {
+    background: url("../star-wars.jpeg");
+    background-size: cover;
+    -webkit-animation: pan 40s linear infinite;
+            animation: pan 40s linear infinite;
+    color: #ffe83d;
+    font-weight: bold; }
+    body.star-wars .main {
+      border-color: transparent; }
+
+.theme {
+  font-size: 1.5rem;
+  cursor: pointer; }
+  @media (max-width: 640px) {
+    .theme {
+      font-size: 0.8rem; } }
+  .theme:hover {
+    opacity: 0.75; }
+
+.main {
+  padding: 16px;
+  border: 4px solid;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 64px;
+  vertical-align: middle; }
+  @media (max-width: 640px) {
+    .main {
+      font-size: 2rem;
+      border-width: 2px; } }
+
+.themes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease; }
+  .themes.hidden {
+    opacity: 0; }
+
+@-webkit-keyframes pan {
+  from {
+    background-position: center 100vh; }
+  to {
+    background-position: center 0; } }
+
+@keyframes pan {
+  from {
+    background-position: center 100vh; }
+  to {
+    background-position: center 0; } }
