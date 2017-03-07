@@ -8,7 +8,7 @@ let counter = 0;
 const update = function () {
 	const now = moment();
 	const milliseconds = now.milliseconds();
-	now.round(1, "seconds")
+	now.round(1, "seconds");
 	const dayType = getDayType(now.day());
 
 	let next, current, final;

@@ -19,9 +19,10 @@ const $ = function (query) {
 
 const notify = function (string) {
 	const createNotification = function (string) {
+		alert("notifying!!!!");
 		const notification = new Notification(string);
 	}
-	if (! "Notification" in window) return;
+	if (! window.Notification || ! window.Notification.requestPermission) return;
 	if (Notification.permission === "granted") {
 		createNotification(string);
 	} else if (Notification.permission !== "denied") {
