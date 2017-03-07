@@ -30,7 +30,7 @@ var setTheme = function setTheme(event, theme) {
 	var hexThemeColor = rgbToHex(themeColor);
 	console.log(hexThemeColor);
 	$("meta[name='theme-color']").setAttribute("content", hexThemeColor);
-	window.localStorage.setItem("theme", theme);
+	trySetItem("theme", theme);
 };
 $("#theme").addEventListener("change", setTheme);
 
@@ -50,7 +50,7 @@ var setOddLunch = function setOddLunch(event, odd) {
 	if (event) odd = event.target.value;
 	lunchSettings.odd = odd;
 	schedules = buildSchedules(masterPeriodList, masterLunchList, lunchSettings);
-	window.localStorage.setItem("oddLunch", odd);
+	trySetItem("oddLunch", odd);
 	if (typeof update !== "undefined") update();
 };
 var setSevenLunch = function setSevenLunch(event, seven) {
@@ -58,7 +58,7 @@ var setSevenLunch = function setSevenLunch(event, seven) {
 	lunchSettings.seven = seven;
 	lunchSettings.even = seven;
 	schedules = buildSchedules(masterPeriodList, masterLunchList, lunchSettings);
-	window.localStorage.setItem("sevenLunch", seven);
+	trySetItem("sevenLunch", seven);
 	if (typeof update !== "undefined") update();
 };
 var sevenLunchToLoad = window.localStorage.getItem("sevenLunch") || DEFAULT_SEVEN_LUNCH;
@@ -74,7 +74,7 @@ $("#odd").addEventListener("change", setOddLunch);
 var setFont = function setFont(event, font) {
 	if (event) font = event.target.value;
 	document.body.style.fontFamily = font;
-	window.localStorage.setItem("font", font);
+	trySetItem("font", font);
 };
 $("#font").addEventListener("change", setFont);
 

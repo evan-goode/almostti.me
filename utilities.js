@@ -43,3 +43,12 @@ var notify = function notify(string) {
 		});
 	}
 };
+
+var trySetItem = function trySetItem(key, value) {
+	try {
+		window.localStorage.setItem(key, value);
+		return true;
+	} catch (_) {
+		return false;
+	}
+};

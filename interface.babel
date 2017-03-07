@@ -29,7 +29,7 @@ const setTheme = function (event, theme) {
 	const hexThemeColor = rgbToHex(themeColor);
 	console.log(hexThemeColor);
 	$("meta[name='theme-color']").setAttribute("content", hexThemeColor);
-	window.localStorage.setItem("theme", theme);
+	trySetItem("theme", theme);
 }
 $("#theme").addEventListener("change", setTheme);
 
@@ -49,7 +49,7 @@ const setOddLunch = function (event, odd) {
 	if (event) odd = event.target.value;
 	lunchSettings.odd = odd;
 	schedules = buildSchedules(masterPeriodList, masterLunchList, lunchSettings);
-	window.localStorage.setItem("oddLunch", odd);
+	trySetItem("oddLunch", odd);
 	if (typeof update !== "undefined") update();
 }
 const setSevenLunch = function (event, seven) {
@@ -57,7 +57,7 @@ const setSevenLunch = function (event, seven) {
 	lunchSettings.seven = seven;
 	lunchSettings.even = seven;
 	schedules = buildSchedules(masterPeriodList, masterLunchList, lunchSettings);
-	window.localStorage.setItem("sevenLunch", seven);
+	trySetItem("sevenLunch", seven);
 	if (typeof update !== "undefined") update();
 }
 const sevenLunchToLoad = window.localStorage.getItem("sevenLunch") || DEFAULT_SEVEN_LUNCH;
@@ -73,7 +73,7 @@ $("#odd").addEventListener("change", setOddLunch);
 const setFont = function (event, font) {
 	if (event) font = event.target.value;
 	document.body.style.fontFamily = font;
-	window.localStorage.setItem("font", font);
+	trySetItem("font", font);
 }
 $("#font").addEventListener("change", setFont);
 

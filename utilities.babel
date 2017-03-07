@@ -32,3 +32,12 @@ const notify = function (string) {
 		});
 	}
 }
+
+const trySetItem = function (key, value) {
+	try {
+		window.localStorage.setItem(key, value);
+		return true;
+	} catch (_) {
+		return false;
+	}
+}
