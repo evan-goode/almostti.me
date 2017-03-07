@@ -57,7 +57,13 @@ $themes: (
 			secondary: lighten(black, 40%),
 			background: white,
 			background-color: white
-		)
+		),
+		hackerman: (
+			primary: lighten(lime, 15%),
+			secondary: transparentize(lighten(lime, 15%), 0.3),
+			background: black,
+			background-color: black
+		),
 );
 
 @each $theme-name, $theme in $themes {

@@ -265,6 +265,37 @@ table {
     .classic .sidebar svg {
       fill: white; }
 
+.hackerman {
+  color: #4dff4d;
+  background: black; }
+  .hackerman .select-wrapper:after {
+    border-top: solid 0.3rem rgba(0, 0, 0, 0.6); }
+  .hackerman select {
+    color: rgba(0, 0, 0, 0.6);
+    border-bottom: solid 0.15rem black; }
+  .hackerman .evil-hack {
+    background-color: black; }
+  .hackerman .material-button:hover {
+    background: rgba(77, 255, 77, 0.2); }
+  .hackerman .material-button svg {
+    fill: #4dff4d; }
+  .hackerman .small {
+    color: rgba(77, 255, 77, 0.7); }
+  .hackerman .progress {
+    background: #4dff4d; }
+  .hackerman .go-home {
+    color: black;
+    background: #4dff4d; }
+  .hackerman .sidebar-overlay {
+    background: rgba(0, 0, 0, 0.25); }
+  .hackerman .sidebar {
+    background: #4dff4d;
+    color: black; }
+    .hackerman .sidebar .material-button:hover {
+      background: rgba(0, 0, 0, 0.1); }
+    .hackerman .sidebar svg {
+      fill: black; }
+
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
