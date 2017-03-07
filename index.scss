@@ -213,7 +213,9 @@ html {
 		font-size: 18px;
 	}
 	@media (max-width: 640px), (max-height: 600px) {
-		font-size: 14px;
+		main {
+			font-size: 14px;
+		}
 	}
 	@media (max-width: 500px), (max-height: 480px) {
 		main {
@@ -221,6 +223,7 @@ html {
 		}
 	}
 	@media (max-width: 460px), (max-height: 420px) {
+		font-size: 14px;
 		main {
 			font-size: 10px;
 		}
