@@ -1,14 +1,14 @@
 const FORMAT_OPTIONS = {
 	trim: false
 };
+const NOTIFY_MINUTES = 1;
 
 let counter = 0;
 
 const update = function () {
 	const now = moment();
 	const milliseconds = now.milliseconds();
-	now.hours(9); // for testing
-	now.round(1, "seconds");
+	now.round(1, "seconds")
 	const dayType = getDayType(now.day());
 
 	let next, current, final;
@@ -36,6 +36,10 @@ const update = function () {
 		$(".remaining-text").textContent = `until ${next.name}`;
 		document.title = remainingString;
 
+		if (timeRemaining.asMinutes() == NOTIFY_MINUTES) {
+			notify(`${NOTIFY_MINUTES} minute${NOTIFY_MINUTES === 1 ? "" : "s"} until ${next.name}`);
+		}
+
 		if (final !== undefined) {
 			const totalTimeRemaining = moment.duration(
 				momentize(final.time).diff(now)
@@ -43,7 +47,7 @@ const update = function () {
 			const totalTimeRemainingString = totalTimeRemaining.format("h:mm:ss", FORMAT_OPTIONS);
 			$(".final-tile").style.display = "block";
 			$(".final").textContent = totalTimeRemainingString;
-			$(".final-text").textContent = `until the end of the day`;
+			$(".final-text").textContent = "until the end of the day";
 		} else {
 			$(".final-tile").style.display = "none";
 		}
@@ -56,7 +60,7 @@ const update = function () {
 			const percentage = 100 * timeElapsed.asSeconds() /
 				(timeElapsed.asSeconds() + timeRemaining.asSeconds());
 			$(".progress").style.width = `${percentage}%`;
-			document.title += ` - ${Math.floor(percentage)}%`
+			document.title += ` - ${Math.floor(percentage)}%`;
 		} else {
 			$(".elapsed-tile").style.display = "none";
 			$(".progress").style.width = `0%`;

@@ -21,9 +21,14 @@ $(".info-icon-close").addEventListener("click", () => {
 
 // theme stuff
 const setTheme = function (event, theme) {
-	document.body.className = "";
+	$("body").className = "";
 	if (event) theme = event.target.value;
-	document.body.classList.add(theme);
+	$("body").classList.add(theme);
+	const themeColor = window.getComputedStyle($(".evil-hack"))
+		.getPropertyValue("background-color");
+	const hexThemeColor = rgbToHex(themeColor);
+	console.log(hexThemeColor);
+	$("meta[name='theme-color']").setAttribute("content", hexThemeColor);
 	window.localStorage.setItem("theme", theme);
 }
 $("#theme").addEventListener("change", setTheme);

@@ -28,3 +28,6 @@ theme(undefined, window.localStorage.getItem("theme") || unset);
 
 window.addEventListener("blur", hide);
 window.addEventListener("focus", show);
+
+background = new Image();
+background.src = "../star-wars.jpeg";

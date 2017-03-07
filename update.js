@@ -3,13 +3,13 @@
 var FORMAT_OPTIONS = {
 	trim: false
 };
+var NOTIFY_MINUTES = 1;
 
 var counter = 0;
 
 var update = function update() {
 	var now = moment();
 	var milliseconds = now.milliseconds();
-	now.hours(9); // for testing
 	now.round(1, "seconds");
 	var dayType = getDayType(now.day());
 
@@ -39,6 +39,10 @@ var update = function update() {
 		$(".remaining").textContent = remainingString;
 		$(".remaining-text").textContent = "until " + next.name;
 		document.title = remainingString;
+
+		if (timeRemaining.asMinutes() == NOTIFY_MINUTES) {
+			notify(NOTIFY_MINUTES + " minute" + (NOTIFY_MINUTES === 1 ? "" : "s") + " until " + next.name);
+		}
 
 		if (final !== undefined) {
 			var totalTimeRemaining = moment.duration(momentize(final.time).diff(now));

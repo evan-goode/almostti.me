@@ -77,6 +77,9 @@ $themes: (
 			color: transparentize($background-color, 0.4);
 			border-bottom: solid 0.15rem $background-color;
 		}
+		.evil-hack {
+			background-color: $background-color;
+		}
 		.material-button {
 			&:hover {
 				background: transparentize($primary, 0.8);
@@ -153,6 +156,9 @@ p {
 .numbers {
 	font-family: $number-font;
 }
+.evil-hack {
+	display: none;
+}
 
 // components
 .select-wrapper {
@@ -206,7 +212,7 @@ html {
 	@media (max-width: 1024px), (max-height: 800px) {
 		font-size: 18px;
 	}
-	@media (max-width: 640px), (max-height: 580px) {
+	@media (max-width: 640px), (max-height: 600px) {
 		font-size: 14px;
 	}
 	@media (max-width: 500px), (max-height: 480px) {
@@ -214,7 +220,7 @@ html {
 			font-size: 12px;
 		}
 	}
-	@media (max-width: 460px), (max-height: 400px) {
+	@media (max-width: 460px), (max-height: 420px) {
 		main {
 			font-size: 10px;
 		}
@@ -222,6 +228,11 @@ html {
 	@media (max-width: 360px), (max-height: 380px) {
 		main {
 			font-size: 8px
+		}
+	}
+	@media (max-width: 360px), (max-height: 320px) {
+		main {
+			font-size: 6px
 		}
 	}
 }
@@ -270,8 +281,8 @@ header {
 main {
 	line-height: 1;
 	flex: 1;
-	overflow: scroll;
-	overflow-y: auto;
+	// overflow: scroll;
+	// overflow-y: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -305,7 +316,7 @@ main {
 	height: 0.35rem;
 	transition: width 1s linear;
 	width: 0;
-	transition: background $animation-duration;
+	transition: background $animation-duration, width 1s linear;
 }
 .overlay {
 	position: fixed;

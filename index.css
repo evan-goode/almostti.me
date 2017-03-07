@@ -54,6 +54,8 @@ table {
   .gold select {
     color: rgba(0, 0, 0, 0.6);
     border-bottom: solid 0.15rem black; }
+  .gold .evil-hack {
+    background-color: black; }
   .gold .material-button:hover {
     background: rgba(255, 215, 0, 0.2); }
   .gold .material-button svg {
@@ -83,6 +85,8 @@ table {
   .salmon select {
     color: rgba(255, 255, 255, 0.6);
     border-bottom: solid 0.15rem white; }
+  .salmon .evil-hack {
+    background-color: white; }
   .salmon .material-button:hover {
     background: rgba(249, 87, 89, 0.2); }
   .salmon .material-button svg {
@@ -112,6 +116,8 @@ table {
   .cornflower select {
     color: rgba(255, 255, 255, 0.6);
     border-bottom: solid 0.15rem white; }
+  .cornflower .evil-hack {
+    background-color: white; }
   .cornflower .material-button:hover {
     background: rgba(100, 149, 237, 0.2); }
   .cornflower .material-button svg {
@@ -141,6 +147,8 @@ table {
   .night select {
     color: rgba(0, 0, 0, 0.6);
     border-bottom: solid 0.15rem black; }
+  .night .evil-hack {
+    background-color: black; }
   .night .material-button:hover {
     background: rgba(230, 230, 230, 0.2); }
   .night .material-button svg {
@@ -171,6 +179,8 @@ table {
   .sunset select {
     color: rgba(179, 128, 204, 0.6);
     border-bottom: solid 0.15rem #b380cc; }
+  .sunset .evil-hack {
+    background-color: #b380cc; }
   .sunset .material-button:hover {
     background: rgba(255, 255, 255, 0.2); }
   .sunset .material-button svg {
@@ -201,6 +211,8 @@ table {
   .ocean select {
     color: rgba(71, 148, 163, 0.6);
     border-bottom: solid 0.15rem #4794a3; }
+  .ocean .evil-hack {
+    background-color: #4794a3; }
   .ocean .material-button:hover {
     background: rgba(255, 255, 255, 0.2); }
   .ocean .material-button svg {
@@ -230,6 +242,8 @@ table {
   .classic select {
     color: rgba(255, 255, 255, 0.6);
     border-bottom: solid 0.15rem white; }
+  .classic .evil-hack {
+    background-color: white; }
   .classic .material-button:hover {
     background: rgba(0, 0, 0, 0.2); }
   .classic .material-button svg {
@@ -289,6 +303,9 @@ p {
 .numbers {
   font-family: "Droid Sans Mono"; }
 
+.evil-hack {
+  display: none; }
+
 .select-wrapper {
   display: inline-block; }
   .select-wrapper:after {
@@ -340,18 +357,21 @@ html {
   @media (max-width: 1024px), (max-height: 800px) {
     html {
       font-size: 18px; } }
-  @media (max-width: 640px), (max-height: 580px) {
+  @media (max-width: 640px), (max-height: 600px) {
     html {
       font-size: 14px; } }
   @media (max-width: 500px), (max-height: 480px) {
     html main {
       font-size: 12px; } }
-  @media (max-width: 460px), (max-height: 400px) {
+  @media (max-width: 460px), (max-height: 420px) {
     html main {
       font-size: 10px; } }
   @media (max-width: 360px), (max-height: 380px) {
     html main {
       font-size: 8px; } }
+  @media (max-width: 360px), (max-height: 320px) {
+    html main {
+      font-size: 6px; } }
 
 body {
   line-height: 1.5;
@@ -411,8 +431,6 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  overflow: scroll;
-  overflow-y: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -452,8 +470,8 @@ main {
   -webkit-transition: width 1s linear;
   transition: width 1s linear;
   width: 0;
-  -webkit-transition: background 0.2s;
-  transition: background 0.2s; }
+  -webkit-transition: background 0.2s, width 1s linear;
+  transition: background 0.2s, width 1s linear; }
 
 .overlay, .sidebar-container, .sidebar-overlay {
   position: fixed;

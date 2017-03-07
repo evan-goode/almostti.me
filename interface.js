@@ -23,9 +23,13 @@ $(".info-icon-close").addEventListener("click", function () {
 
 // theme stuff
 var setTheme = function setTheme(event, theme) {
-	document.body.className = "";
+	$("body").className = "";
 	if (event) theme = event.target.value;
-	document.body.classList.add(theme);
+	$("body").classList.add(theme);
+	var themeColor = window.getComputedStyle($(".evil-hack")).getPropertyValue("background-color");
+	var hexThemeColor = rgbToHex(themeColor);
+	console.log(hexThemeColor);
+	$("meta[name='theme-color']").setAttribute("content", hexThemeColor);
 	window.localStorage.setItem("theme", theme);
 };
 $("#theme").addEventListener("change", setTheme);

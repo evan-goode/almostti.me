@@ -2,6 +2,11 @@ const momentize = function (array) {
 	return moment({hour: array[0], minute: array[1]});
 }
 
+const rgbToHex = function (rgb) {
+	const [r, g, b] = rgb.replace(/[^0-9,]/g, '').split(",").map((n) => parseInt(n));
+	return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
 let querySelectorCache = [];
 const $ = function (query) {
 	if (query in querySelectorCache) {
