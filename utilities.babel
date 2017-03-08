@@ -19,18 +19,21 @@ const $ = function (query) {
 
 const notify = function (string) {
 	const createNotification = function (string) {
-		alert("notifying!!!!");
 		const notification = new Notification(string);
 	}
-	if (! window.Notification || ! window.Notification.requestPermission) return;
-	if (Notification.permission === "granted") {
-		createNotification(string);
-	} else if (Notification.permission !== "denied") {
-		Notification.requestPermission((permission) => {
-			if (permission === "granted") {
-				createNotification(string);
-			}
-		});
+	if (! window.Notification) return;
+	try {
+		if (Notification.permission === "granted") {
+			createNotification(string);
+		} else if (Notification.permission !== "denied") {
+			Notification.requestPermission((permission) => {
+				if (permission === "granted") {
+					createNotification(string);
+				}
+			});
+		}
+	} catch (error) {
+		return false;
 	}
 }
 

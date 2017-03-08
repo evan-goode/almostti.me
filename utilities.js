@@ -30,18 +30,21 @@ var $ = function $(query) {
 
 var notify = function notify(string) {
 	var createNotification = function createNotification(string) {
-		alert("notifying!!!!");
 		var notification = new Notification(string);
 	};
-	if (!window.Notification || !window.Notification.requestPermission) return;
-	if (Notification.permission === "granted") {
-		createNotification(string);
-	} else if (Notification.permission !== "denied") {
-		Notification.requestPermission(function (permission) {
-			if (permission === "granted") {
-				createNotification(string);
-			}
-		});
+	if (!window.Notification) return;
+	try {
+		if (Notification.permission === "granted") {
+			createNotification(string);
+		} else if (Notification.permission !== "denied") {
+			Notification.requestPermission(function (permission) {
+				if (permission === "granted") {
+					createNotification(string);
+				}
+			});
+		}
+	} catch (error) {
+		return false;
 	}
 };
 
