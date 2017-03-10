@@ -391,20 +391,17 @@ html {
   @media (max-width: 640px), (max-height: 600px) {
     html main {
       font-size: 14px; } }
-  @media (max-width: 500px), (max-height: 480px) {
+  @media (max-width: 500px), (max-height: 500px) {
     html main {
       font-size: 12px; } }
-  @media (max-width: 460px), (max-height: 420px) {
+  @media (max-width: 460px), (max-height: 460px) {
     html {
       font-size: 14px; }
       html main {
         font-size: 10px; } }
   @media (max-width: 360px), (max-height: 380px) {
     html main {
-      font-size: 8px; } }
-  @media (max-width: 360px), (max-height: 320px) {
-    html main {
-      font-size: 6px; } }
+      font-size: 7px; } }
 
 body {
   line-height: 1.5;
@@ -419,6 +416,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 320px;
+  min-width: 360px;
   -webkit-transition: color 0.2s, background 0.2s;
   transition: color 0.2s, background 0.2s; }
   body > * {
@@ -559,6 +558,7 @@ main {
   transition: opacity 0.2s, background 0.2s; }
 
 .sidebar {
+  overflow: scroll;
   padding: 1rem;
   pointer-events: initial;
   -webkit-transition: background 0.2s, color 0.2s, -webkit-transform 0.4s;

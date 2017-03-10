@@ -223,12 +223,12 @@ html {
 			font-size: 14px;
 		}
 	}
-	@media (max-width: 500px), (max-height: 480px) {
+	@media (max-width: 500px), (max-height: 500px) {
 		main {
 			font-size: 12px;
 		}
 	}
-	@media (max-width: 460px), (max-height: 420px) {
+	@media (max-width: 460px), (max-height: 460px) {
 		font-size: 14px;
 		main {
 			font-size: 10px;
@@ -236,12 +236,7 @@ html {
 	}
 	@media (max-width: 360px), (max-height: 380px) {
 		main {
-			font-size: 8px
-		}
-	}
-	@media (max-width: 360px), (max-height: 320px) {
-		main {
-			font-size: 6px
+			font-size: 7px
 		}
 	}
 }
@@ -252,6 +247,8 @@ body {
 	visibility: hidden;
 	justify-content: center;
 	flex-direction: column;
+	min-height: 320px;
+	min-width: 360px;
 	> * {
 		width: 100%;
 	}
@@ -376,6 +373,7 @@ main {
 		background $animation-duration;
 }
 .sidebar {
+	overflow: scroll;
 	padding: $padding;
 	header {
 		padding: 0;
