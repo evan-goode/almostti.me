@@ -138,7 +138,7 @@ var masterLunchList = {
 			end: [13, 53]
 		}],
 		second: [{
-			name: "first half of fourth period",
+			name: "the first half of fourth period",
 			start: [11, 51],
 			end: [12, 37]
 		}, {
@@ -146,7 +146,7 @@ var masterLunchList = {
 			start: [12, 37],
 			end: [13, 2]
 		}, {
-			name: "second half of fourth period",
+			name: "the second half of fourth period",
 			start: [13, 7],
 			end: [13, 53]
 		}],
