@@ -1,7 +1,11 @@
 "use strict";
 
-function getDayType(day) {
-	switch (day) {
+function getDayType(moment, periodList) {
+	var formatted = moment.format("YYYY-MM-DD");
+	if (formatted in periodList) {
+		return formatted;
+	}
+	switch (moment.day()) {
 		case 0:
 			return "none";
 		case 3:

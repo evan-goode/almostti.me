@@ -1,5 +1,16 @@
 "use strict";
 
+var DEFAULT_SEVEN_LUNCH = "first";
+var DEFAULT_ODD_LUNCH = "second";
+var defaultLunchSettings = {
+	seven: DEFAULT_SEVEN_LUNCH,
+	odd: DEFAULT_ODD_LUNCH,
+	even: DEFAULT_SEVEN_LUNCH,
+	"2017-03-22": DEFAULT_SEVEN_LUNCH,
+	none: "none"
+};
+// TODO: move to exceptions.babel
+
 var masterPeriodList = {
 	seven: [{
 		name: "first period",
@@ -54,6 +65,31 @@ var masterPeriodList = {
 	}, {
 		name: "sixth period",
 		start: [13, 58],
+		end: [15, 30]
+	}],
+	"2017-03-22": [{
+		name: "first period",
+		start: [8, 30],
+		end: [9, 25]
+	}, {
+		name: "second period",
+		start: [9, 30],
+		end: [10, 20]
+	}, {
+		name: "third period",
+		start: [10, 25],
+		end: [11, 15]
+	}, {
+		name: "fifth period",
+		start: [12, 50],
+		end: [13, 40]
+	}, {
+		name: "sixth period",
+		start: [13, 45],
+		end: [14, 35]
+	}, {
+		name: "seventh period",
+		start: [14, 40],
 		end: [15, 30]
 	}],
 	none: []
@@ -158,6 +194,40 @@ var masterLunchList = {
 			name: "lunch",
 			start: [13, 28],
 			end: [13, 53]
+		}],
+		none: []
+	},
+	"2017-03-22": {
+		first: [{
+			name: "lunch",
+			start: [11, 20],
+			end: [11, 45]
+		}, {
+			name: "fourth period",
+			start: [11, 50],
+			end: [12, 45]
+		}],
+		second: [{
+			name: "the first half of fourth period",
+			start: [11, 20],
+			end: [11, 50]
+		}, {
+			name: "lunch",
+			start: [11, 50],
+			end: [12, 15]
+		}, {
+			name: "the second half of fourth period",
+			start: [12, 20],
+			end: [12, 45]
+		}],
+		third: [{
+			name: "fourth period",
+			start: [11, 20],
+			end: [12, 20]
+		}, {
+			name: "lunch",
+			start: [12, 20],
+			end: [12, 45]
 		}],
 		none: []
 	},

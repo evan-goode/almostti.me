@@ -11,8 +11,7 @@ var update = function update() {
 	var now = moment();
 	var milliseconds = now.milliseconds();
 	now.round(1, "seconds");
-	var dayType = getDayType(now.day());
-
+	var dayType = getDayType(now, masterPeriodList);
 	var next = void 0,
 	    current = void 0,
 	    final = void 0;

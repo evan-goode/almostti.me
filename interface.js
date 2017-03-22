@@ -1,8 +1,6 @@
 "use strict";
 
 var DEFAULT_THEME = "salmon";
-var DEFAULT_SEVEN_LUNCH = "first";
-var DEFAULT_ODD_LUNCH = "second";
 var DEFAULT_FONT = "Product Sans";
 
 $(".icon-settings").addEventListener("click", function () {
@@ -28,7 +26,6 @@ var setTheme = function setTheme(event, theme) {
 	$("body").classList.add(theme);
 	var themeColor = window.getComputedStyle($(".evil-hack")).getPropertyValue("background-color");
 	var hexThemeColor = rgbToHex(themeColor);
-	console.log(hexThemeColor);
 	$("meta[name='theme-color']").setAttribute("content", hexThemeColor);
 	trySetItem("theme", theme);
 };
@@ -39,12 +36,7 @@ $("#theme").value = themeToLoad;
 setTheme(undefined, themeToLoad);
 
 // lunch stuff
-var lunchSettings = {
-	seven: DEFAULT_SEVEN_LUNCH,
-	odd: DEFAULT_ODD_LUNCH,
-	even: DEFAULT_SEVEN_LUNCH,
-	none: "none"
-};
+var lunchSettings = defaultLunchSettings;
 var schedules = void 0;
 var setOddLunch = function setOddLunch(event, odd) {
 	if (event) odd = event.target.value;
@@ -57,6 +49,7 @@ var setSevenLunch = function setSevenLunch(event, seven) {
 	if (event) seven = event.target.value;
 	lunchSettings.seven = seven;
 	lunchSettings.even = seven;
+	lunchSettings["2017-03-22"] = seven;
 	schedules = buildSchedules(masterPeriodList, masterLunchList, lunchSettings);
 	trySetItem("sevenLunch", seven);
 	if (typeof update !== "undefined") update();

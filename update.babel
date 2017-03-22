@@ -9,8 +9,7 @@ const update = function () {
 	const now = moment();
 	const milliseconds = now.milliseconds();
 	now.round(1, "seconds");
-	const dayType = getDayType(now.day());
-
+	const dayType = getDayType(now, masterPeriodList);
 	let next, current, final;
 	for (let index = 0; index < schedules[dayType].length; ++ index) {
 		const time = schedules[dayType][index];
