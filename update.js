@@ -69,10 +69,10 @@ var update = function update() {
 		document.title = $(".go-home").textContent;
 		$(".go-home").classList.add("active");
 	}
-
 	if (counter > 3600) {
 		shiftLetters();
 	}
+	++counter;
 	document.body.style.visibility = "initial";
 	setTimeout(update, 1000 - milliseconds);
 };
