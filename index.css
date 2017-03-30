@@ -296,6 +296,37 @@ table {
     .hackerman .sidebar svg {
       fill: black; }
 
+.meme {
+  color: black;
+  background: url(tfw.jpg); }
+  .meme .select-wrapper:after {
+    border-top: solid 0.3rem rgba(255, 255, 255, 0.6); }
+  .meme select {
+    color: rgba(255, 255, 255, 0.6);
+    border-bottom: solid 0.15rem white; }
+  .meme .evil-hack {
+    background-color: white; }
+  .meme .material-button:hover {
+    background: rgba(0, 0, 0, 0.2); }
+  .meme .material-button svg {
+    fill: black; }
+  .meme .small {
+    color: #666666; }
+  .meme .progress {
+    background: black; }
+  .meme .go-home {
+    color: white;
+    background: black; }
+  .meme .sidebar-overlay {
+    background: rgba(255, 255, 255, 0.25); }
+  .meme .sidebar {
+    background: black;
+    color: white; }
+    .meme .sidebar .material-button:hover {
+      background: rgba(255, 255, 255, 0.1); }
+    .meme .sidebar svg {
+      fill: white; }
+
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;

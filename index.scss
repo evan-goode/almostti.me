@@ -64,6 +64,13 @@ $themes: (
 			background: black,
 			background-color: black
 		),
+		meme: (
+			primary: black,
+			secondary: lighten(black, 40%),
+			background: url(tfw.jpg),
+			background-color: white
+		),
+	
 );
 
 @each $theme-name, $theme in $themes {
