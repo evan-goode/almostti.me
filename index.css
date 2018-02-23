@@ -172,7 +172,6 @@ table {
 
 .sunset {
   color: white;
-  background: -webkit-linear-gradient(135deg, #ff8080, #8080ff);
   background: linear-gradient(-45deg, #ff8080, #8080ff); }
   .sunset .select-wrapper:after {
     border-top: solid 0.3rem rgba(179, 128, 204, 0.6); }
@@ -204,7 +203,6 @@ table {
 
 .ocean {
   color: white;
-  background: -webkit-linear-gradient(top, #85d8ce, #085078);
   background: linear-gradient(to bottom, #85d8ce, #085078); }
   .ocean .select-wrapper:after {
     border-top: solid 0.3rem rgba(71, 148, 163, 0.6); }
@@ -318,7 +316,6 @@ h4 {
   margin-bottom: 0.25rem; }
 
 svg {
-  -webkit-transition: fill 0.2s;
   transition: fill 0.2s; }
 
 a {
@@ -348,7 +345,6 @@ p {
     border: solid 0.3rem transparent;
     content: "";
     pointer-events: none;
-    -webkit-transition: border-top 0.2s;
     transition: border-top 0.2s; }
 
 select {
@@ -363,25 +359,19 @@ select {
   font-family: inherit;
   position: relative;
   cursor: pointer;
-  -webkit-transition: color 0.2s, border-bottom 0.2s;
   transition: color 0.2s, border-bottom 0.2s; }
 
 .material-button {
   padding: 0.33333rem;
   cursor: pointer;
   border-radius: 50%;
-  -webkit-transition: background 0.2s, -webkit-transform 0.2s;
-  transition: background 0.2s, -webkit-transform 0.2s;
-  transition: background 0.2s, transform 0.2s;
-  transition: background 0.2s, transform 0.2s, -webkit-transform 0.2s; }
+  transition: background 0.2s, transform 0.2s; }
 
 .icon-settings:hover {
-  -webkit-transform: rotate(-0.16667turn);
-          transform: rotate(-0.16667turn); }
+  transform: rotate(-0.16667turn); }
 
 .icon-settings:hover {
-  -webkit-transform: rotate(-0.16667turn);
-          transform: rotate(-0.16667turn); }
+  transform: rotate(-0.16667turn); }
 
 html {
   font-size: 24px; }
@@ -405,20 +395,15 @@ html {
 
 body {
   line-height: 1.5;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   visibility: hidden;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
   min-height: 320px;
   min-width: 360px;
-  -webkit-transition: color 0.2s, background 0.2s;
   transition: color 0.2s, background 0.2s; }
   body > * {
     width: 100%; }
@@ -426,27 +411,21 @@ body {
 header {
   padding: 1rem;
   padding-bottom: 0;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
   header h1, header h2 {
     font-size: 1.5rem; }
   header .buttons {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center; }
     header .buttons svg {
       display: block;
       height: 1.5rem;
@@ -460,18 +439,14 @@ header {
 
 main {
   line-height: 1;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
+  -ms-flex: 1;
+      flex: 1;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
   main > .container {
     margin: auto; }
   main * {
@@ -482,7 +457,6 @@ main {
 
 .small {
   font-size: 1.3em;
-  -webkit-transition: color 0.2s;
   transition: color 0.2s; }
 
 .big {
@@ -499,10 +473,8 @@ main {
 
 .progress {
   height: 0.35rem;
-  -webkit-transition: width 1s linear;
   transition: width 1s linear;
   width: 0;
-  -webkit-transition: background 0.2s, width 1s linear;
   transition: background 0.2s, width 1s linear; }
 
 .overlay, .sidebar-container, .sidebar-overlay {
@@ -515,16 +487,12 @@ main {
   height: 100%; }
 
 .go-home {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition: opacity 0.2s, color 0.2s, background 0.2s, -webkit-clip-path 0.4s;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   transition: opacity 0.2s, color 0.2s, background 0.2s, -webkit-clip-path 0.4s;
   transition: clip-path 0.4s, opacity 0.2s, color 0.2s, background 0.2s;
   transition: clip-path 0.4s, opacity 0.2s, color 0.2s, background 0.2s, -webkit-clip-path 0.4s;
@@ -549,24 +517,18 @@ main {
   .sidebar-container.active .sidebar-overlay {
     opacity: 1; }
   .sidebar-container.active .sidebar {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
+    transform: translateX(0); }
 
 .sidebar-overlay {
   opacity: 0;
-  -webkit-transition: opacity 0.2s, background 0.2s;
   transition: opacity 0.2s, background 0.2s; }
 
 .sidebar {
   overflow: scroll;
   padding: 1rem;
   pointer-events: initial;
-  -webkit-transition: background 0.2s, color 0.2s, -webkit-transform 0.4s;
-  transition: background 0.2s, color 0.2s, -webkit-transform 0.4s;
   transition: transform 0.4s, background 0.2s, color 0.2s;
-  transition: transform 0.4s, background 0.2s, color 0.2s, -webkit-transform 0.4s;
-  -webkit-transform: translateX(120%);
-          transform: translateX(120%);
+  transform: translateX(120%);
   height: 100%;
   width: 20rem;
   position: absolute;

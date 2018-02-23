@@ -9,19 +9,14 @@ body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   text-align: center;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
   padding: 16px;
   background-repeat: no-repeat;
   background-attachment: fixed; }
@@ -31,7 +26,6 @@ body {
       border-color: black; }
   body.sunset {
     color: white;
-    background: -webkit-linear-gradient(135deg, rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.5));
     background: linear-gradient(-45deg, rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.5)); }
     body.sunset .main {
       border-color: white; }
@@ -41,7 +35,6 @@ body {
     body.night .main {
       border-color: lightgray; }
   body.ocean {
-    background: -webkit-linear-gradient(top, #85d8ce, #085078);
     background: linear-gradient(to bottom, #85d8ce, #085078);
     color: white; }
     body.ocean .main {
@@ -49,8 +42,7 @@ body {
   body.star-wars {
     background: url("../star-wars.jpeg");
     background-size: cover;
-    -webkit-animation: pan 40s linear infinite;
-            animation: pan 40s linear infinite;
+    animation: pan 40s linear infinite;
     color: #ffe83d;
     font-weight: bold; }
     body.star-wars .main {
@@ -81,26 +73,16 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: opacity 0.5s ease;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
   transition: opacity 0.5s ease; }
   .themes.hidden {
     opacity: 0; }
-
-@-webkit-keyframes pan {
-  from {
-    background-position: center 100vh; }
-  to {
-    background-position: center 0; } }
 
 @keyframes pan {
   from {
